@@ -1,19 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
 <head>
-	<title>NVC Dialer</title>
-<script>
-function dial() {
-	alert("hello");
+<title>NVC Dialer</title>
+<script type="text/javascript">
+function dial(nr) {
+	window.location=nr;
 }
+var nvc="tel:8200200";
+var pause=",,";
+var hash="#"
 </script>
 </head>
 <body>
 <h1>NVC Dialer</h1>
 <p>
-Conference code: <input type="text"/>
-<input type="button" value="Dial" onclick="dial()"/>
-</p>
-<!--a href="tel:8200200,,2001300240#*3264#">Hyperlink</a>-->
+Personal conference: <input type="button" value="Dial" onclick="dial(nvc+',,2001300240#*3264#')"/>
+<p>
+Conference code: <input id="conf" type="text"/>
+<input type="button" value="Dial" onclick="dial(nvc+pause+conf.value+hash)"/>
 </p>
 </body>
 </html>
